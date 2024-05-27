@@ -14,7 +14,9 @@ compile:
 	@rm -rf build/
 	@gox -ldflags "-X main.Version=$(VERSION)" \
 	-osarch="darwin/amd64" \
+	-osarch="darwin/arm64" \
 	-osarch="linux/amd64" \
+	-osarch="linux/arm64" \
 	-osarch="windows/amd64" \
 	-output "build/{{.Dir}}_$(VERSION)_{{.OS}}_{{.Arch}}/$(NAME)" \
 	./...
